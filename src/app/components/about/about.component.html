@@ -1,0 +1,68 @@
+<div class="bg-gray-100 py-16">
+    <!-- About Section -->
+    <div class="container mx-auto px-6 lg:px-16 mb-16">
+        <h1 class="text-4xl lg:text-5xl font-extrabold text-green-800 text-center mb-12">
+            {{ aboutSectionTitle }}
+        </h1>
+        <p class="text-lg lg:text-xl text-gray-700 leading-relaxed text-center mb-8">
+            {{ aboutSectionContent }}
+        </p>
+    </div>
+
+    <!-- Training Features Section -->
+    <div class="container mx-auto px-6 lg:px-16 mb-16">
+        <h1 class="text-4xl lg:text-5xl font-extrabold text-green-800 text-center mb-12">
+            {{ trainingFeaturesTitle }}
+        </h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Personalized Training -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img [src]="personalizedTrainingImage" alt="{{ personalizedTrainingAlt }}" class="w-full h-48 object-cover" />
+                <div class="p-6">
+                    <h4 class="text-2xl font-bold text-green-800 mb-4">
+                        {{ personalizedTrainingTitle }}
+                    </h4>
+                    <p class="text-gray-600">
+                        {{ personalizedTrainingContent }}
+                    </p>
+                </div>
+            </div>
+            <!-- Group Lessons -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img [src]="groupLessonsImage" alt="{{ groupLessonsAlt }}" class="w-full h-48 object-cover" />
+                <div class="p-6">
+                    <h4 class="text-2xl font-bold text-green-800 mb-4">
+                        {{ groupLessonsTitle }}
+                    </h4>
+                    <p class="text-gray-600">
+                        {{ groupLessonsContent }}
+                    </p>
+                </div>
+            </div>
+            <!-- Advanced Training -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img [src]="advancedTrainingImage" alt="{{ advancedTrainingAlt }}" class="w-full h-48 object-cover" />
+                <div class="p-6">
+                    <h4 class="text-2xl font-bold text-green-800 mb-4">
+                        {{ advancedTrainingTitle }}
+                    </h4>
+                    <p class="text-gray-600">
+                        {{ advancedTrainingContent }}
+                    </p>
+                </div>
+            </div>
+            <!-- Kids Lessons -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img [src]="kidsLessonsImage" alt="{{ kidsLessonsAlt }}" class="w-full h-48 object-cover" />
+                <div class="p-6">
+                    <h4 class="text-2xl font-bold text-green-800 mb-4">
+                        {{ kidsLessonsTitle }}
+                    </h4>
+                    <p class="text-gray-600">
+                        {{ kidsLessonsContent }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

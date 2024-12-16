@@ -1,0 +1,68 @@
+<div class="bg-gray-100 py-16">
+    <!-- Hero Section -->
+    <div class="container mx-auto px-6 lg:px-16 text-center mb-16 relative">
+        <img [src]="hero.image" alt="{{ hero.alt }}" class="rounded-lg shadow-lg w-full h-full object-cover" style="filter: brightness(50%)" />
+        <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+            <div class="text-white w-2/3">
+                <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">
+                    {{ hero.title }}
+                </h1>
+                <p class="text-lg lg:text-xl leading-relaxed">
+                    {{ hero.description }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Join Our Golf Club Section -->
+    <div class="container mx-auto px-6 lg:px-16 mb-16">
+        <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden">
+            <img [src]="joinClub.image" alt="{{ joinClub.alt }}" class="w-full md:w-1/2 h-auto" />
+            <div class="p-8 md:w-1/2 text-center md:text-left">
+                <h4 class="text-3xl font-bold text-green-800 mb-4">
+                    {{ joinClub.title }}
+                </h4>
+                <p class="text-lg text-gray-600 mb-6">
+                    {{ joinClub.description }}
+                </p>
+                <button (click)="joinClub.buttonAction()" class="bg-green-800 text-white px-6 py-2 rounded-full hover:bg-green-700 transition duration-300">
+          {{ joinClub.buttonText }}
+        </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Team Section -->
+    <div class="container mx-auto px-6 lg:px-16 mb-16">
+        <div class="flex flex-col md:flex-row-reverse items-center bg-white rounded-lg shadow-lg overflow-hidden">
+            <img [src]="team.image" alt="{{ team.alt }}" class="w-full md:w-1/2 h-auto" />
+            <div class="p-8 md:w-1/2 text-center md:text-left">
+                <h4 class="text-3xl font-bold text-green-800 mb-4">{{ team.title }}</h4>
+                <p class="text-lg text-gray-600 mb-6">
+                    {{ team.description }}
+                </p>
+                <button (click)="team.buttonAction()" class="bg-green-800 text-white px-6 py-2 rounded-full hover:bg-green-700 transition duration-300">
+          {{ team.buttonText }}
+        </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Know More About Us Section -->
+    <div class="container mx-auto px-6 lg:px-16">
+        <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden">
+            <img [src]="about.image" alt="{{ about.alt }}" class="w-full md:w-1/2 h-auto" />
+            <div class="p-8 md:w-1/2 text-center md:text-left">
+                <h4 class="text-3xl font-bold text-green-800 mb-4">
+                    {{ about.title }}
+                </h4>
+                <p class="text-lg text-gray-600 mb-6">
+                    {{ about.description }}
+                </p>
+                <button (click)="about.buttonAction()" class="bg-green-800 text-white px-6 py-2 rounded-full hover:bg-green-700 transition duration-300">
+          {{ about.buttonText }}
+        </button>
+            </div>
+        </div>
+    </div>
+</div>
