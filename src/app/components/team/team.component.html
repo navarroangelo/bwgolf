@@ -2,50 +2,56 @@
     <!-- Meet Our Team Section -->
     <div class="container mx-auto px-6 lg:px-16 mb-16">
         <h1 class="text-4xl lg:text-5xl font-extrabold text-green-800 text-center mb-12">
-            Meet Our Team
+            {{ meetOurTeamTitle }}
         </h1>
 
         <!-- Ian Matchado -->
         <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden mb-12">
-            <img src="/assets/team-ian.jpg" alt="Ian Matchado" class="w-1/2 h-auto object-cover" />
+            <img [src]="ianMatchadoImage" alt="{{ ianMatchadoAlt }}" class="w-1/2 h-auto object-cover" />
 
             <div class="p-8 md:w-1/2 text-center md:text-left">
-                <h2 class="text-2xl font-bold text-green-800 mb-4">Ian Matchado</h2>
+                <h2 class="text-2xl font-bold text-green-800 mb-4">
+                    {{ ianMatchadoName }}
+                </h2>
                 <p class="text-lg text-gray-600 mb-4">
-                    Ian Matchado is one of the veteran players who leads BW Golf, sharing lessons and inspiring players to achieve their goals in the game!
+                    {{ ianMatchadoDescription }}
                 </p>
                 <p class="text-lg text-gray-600">
-                    Touring Player Professional / Golf Teaching Professional
+                    {{ ianMatchadoPosition }}
                 </p>
             </div>
         </div>
 
         <!-- Jojo Campos -->
         <div class="flex flex-col md:flex-row-reverse items-center bg-white rounded-lg shadow-lg overflow-hidden mb-12">
-            <img src="/assets/team-jojo.jpg" alt="Jojo Campos" class="w-1/2 h-auto object-cover" />
+            <img [src]="jojoCamposImage" alt="{{ jojoCamposAlt }}" class="w-1/2 h-auto object-cover" />
 
             <div class="p-8 md:w-1/2 text-center md:text-left">
-                <h2 class="text-2xl font-bold text-green-800 mb-4">Jojo Campos</h2>
+                <h2 class="text-2xl font-bold text-green-800 mb-4">
+                    {{ jojoCamposName }}
+                </h2>
                 <p class="text-lg text-gray-600 mb-4">
-                    Jojo started as a coach in the field and was recognized as a team leader. His exceptional skills elevated him to the ranks of a professional player and teacher.
+                    {{ jojoCamposDescription }}
                 </p>
                 <p class="text-lg text-gray-600">
-                    Supervisor / Golf Teaching Professional
+                    {{ jojoCamposPosition }}
                 </p>
             </div>
         </div>
 
         <!-- Noli Kempis -->
         <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden">
-            <img src="/assets/team-noli.jpg" alt="Noli Kempis" class="w-1/2 h-auto object-cover" />
+            <img [src]="noliKempisImage" alt="{{ noliKempisAlt }}" class="w-1/2 h-auto object-cover" />
 
             <div class="p-8 md:w-1/2 text-center md:text-left">
-                <h2 class="text-2xl font-bold text-green-800 mb-4">Noli Kempis</h2>
+                <h2 class="text-2xl font-bold text-green-800 mb-4">
+                    {{ noliKempisName }}
+                </h2>
                 <p class="text-lg text-gray-600 mb-4">
-                    Noli is one of the pioneering veteran golf players and coaches in Pampanga, inspiring countless players with his dedication and expertise.
+                    {{ noliKempisDescription }}
                 </p>
                 <p class="text-lg text-gray-600">
-                    Golf Teaching Professional / Secretary
+                    {{ noliKempisPosition }}
                 </p>
             </div>
         </div>

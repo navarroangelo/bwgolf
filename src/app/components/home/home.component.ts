@@ -20,7 +20,7 @@ export class HomeComponent {
     title: 'Join BW Golf',
     description:
       'Experience the best golf trainings and lessons to up your game.',
-    buttonAction: () => (window.location.href = 'services.html'),
+    buttonAction: () => (window.location.href = '/services'),
     buttonText: 'Join Now',
   };
 
@@ -29,7 +29,7 @@ export class HomeComponent {
     alt: 'Team',
     title: 'Our Team',
     description: 'Improve your skills with our expert instructors.',
-    buttonAction: () => (window.location.href = 'team.html'),
+    buttonAction: () => (window.location.href = '/team'),
     buttonText: 'Book Now',
   };
 
@@ -38,7 +38,7 @@ export class HomeComponent {
     alt: 'About',
     title: 'Know More About BW Golf',
     description: 'Explore more about what BW Golf is all about!',
-    buttonAction: () => (window.location.href = 'shop.html'),
-    buttonText: 'Shop Now',
+    buttonAction: () => (window.location.href = '/about'),
+    buttonText: 'Know More',
   };
 }

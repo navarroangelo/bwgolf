@@ -1,9 +1,13 @@
 <div class="bg-gray-100 py-16">
     <!-- Driving Range Section -->
+    <h1 class="text-4xl lg:text-5xl font-extrabold text-green-800 text-center mb-12">
+        Our World-Class Services
+    </h1>
+
     <div class="container mx-auto px-6 lg:px-16 mb-16">
         <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden">
-            <a href="assets/service-driving-range.jpg" class="w-full md:w-1/2 block">
-                <img src="assets/service-driving-range.jpg" alt="Driving Range" class="w-full h-64 object-cover" />
+            <a [href]="drivingRangeImage" class="w-full md:w-1/2 block">
+                <img [src]="drivingRangeImage" alt="Driving Range" class="w-full h-64 object-cover" />
             </a>
             <div class="p-8 md:w-1/2 text-center md:text-left">
                 <h1 class="text-4xl font-bold text-green-800 mb-4">Driving Range</h1>
@@ -17,8 +21,8 @@
     <!-- Trainings or Lessons Section -->
     <div class="container mx-auto px-6 lg:px-16 mb-16">
         <div class="flex flex-col md:flex-row-reverse items-center bg-white rounded-lg shadow-lg overflow-hidden">
-            <a href="assets/service-training.jpg" class="w-full md:w-1/2 block">
-                <img src="assets/service-training.jpg" alt="Trainings or Lessons" class="w-full h-64 object-cover" />
+            <a [href]="trainingImage" class="w-full md:w-1/2 block">
+                <img [src]="trainingImage" alt="Trainings or Lessons" class="w-full h-64 object-cover" />
             </a>
             <div class="p-8 md:w-1/2 text-center md:text-left">
                 <h1 class="text-4xl font-bold text-green-800 mb-4">
@@ -34,8 +38,8 @@
     <!-- Club Fitting Section -->
     <div class="container mx-auto px-6 lg:px-16">
         <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden">
-            <a href="assets/service-club-fitting.jpg" class="w-full md:w-1/2 block">
-                <img src="assets/service-club-fitting.jpg" alt="Club Fitting" class="w-full h-64 object-cover" />
+            <a [href]="clubFittingImage" class="w-full md:w-1/2 block">
+                <img [src]="clubFittingImage" alt="Club Fitting" class="w-full h-64 object-cover" />
             </a>
             <div class="p-8 md:w-1/2 text-center md:text-left">
                 <h1 class="text-4xl font-bold text-green-800 mb-4">Club Fitting</h1>
