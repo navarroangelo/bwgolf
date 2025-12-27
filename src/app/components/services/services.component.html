@@ -1,52 +1,99 @@
-<div class="bg-gray-100 py-16">
-    <!-- Driving Range Section -->
-    <h1 class="text-4xl lg:text-5xl font-extrabold text-green-800 text-center mb-12">
-        Our World-Class Services
+<!-- Hero Banner -->
+<section class="bg-green-800 py-12 sm:py-16 lg:py-20" aria-label="Services page header">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-3 sm:mb-4">
+      {{ pageTitle }}
     </h1>
+    <p class="text-sm sm:text-base md:text-lg text-green-100 max-w-3xl mx-auto">
+      {{ pageSubtitle }}
+    </p>
+  </div>
+</section>
 
-    <div class="container mx-auto px-6 lg:px-16 mb-16">
-        <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden">
-            <a [href]="drivingRangeImage" class="w-full md:w-1/2 block">
-                <img [src]="drivingRangeImage" alt="Driving Range" class="w-full h-64 object-cover" />
-            </a>
-            <div class="p-8 md:w-1/2 text-center md:text-left">
-                <h1 class="text-4xl font-bold text-green-800 mb-4">Driving Range</h1>
-                <p class="text-lg text-gray-600 leading-relaxed">
-                    Vibrant scenery of our driving range will truly make your mood right for your right swing. Our driving range offers a wide range of yards for golfers who hit their clubs like Tiger Woods.
-                </p>
-            </div>
-        </div>
-    </div>
+<!-- Services Section -->
+<section class="bg-gray-50 py-8 sm:py-12 lg:py-16" aria-label="Our services">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="space-y-8 sm:space-y-12 lg:space-y-16">
+      <!-- Service Card -->
+      <article
+        *ngFor="let service of services; let i = index; let even = even"
+        class="group bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+      >
+        <div
+          class="flex flex-col items-center"
+          [class.md:flex-row]="even"
+          [class.md:flex-row-reverse]="!even"
+        >
+          <!-- Image Container -->
+          <div class="w-full md:w-1/2 h-56 sm:h-64 md:h-80 lg:h-96 overflow-hidden">
+            <img
+              [src]="service.image"
+              [alt]="service.alt"
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
 
-    <!-- Trainings or Lessons Section -->
-    <div class="container mx-auto px-6 lg:px-16 mb-16">
-        <div class="flex flex-col md:flex-row-reverse items-center bg-white rounded-lg shadow-lg overflow-hidden">
-            <a [href]="trainingImage" class="w-full md:w-1/2 block">
-                <img [src]="trainingImage" alt="Trainings or Lessons" class="w-full h-64 object-cover" />
-            </a>
-            <div class="p-8 md:w-1/2 text-center md:text-left">
-                <h1 class="text-4xl font-bold text-green-800 mb-4">
-                    Trainings or Lessons
-                </h1>
-                <p class="text-lg text-gray-600 leading-relaxed">
-                    Our training programs are designed to help golfers of all levels improve their skills. Join our lessons and get personalized coaching from our expert instructors.
-                </p>
-            </div>
-        </div>
-    </div>
+          <!-- Content Container -->
+          <div class="w-full md:w-1/2 p-6 sm:p-8 lg:p-10 xl:p-12 text-center md:text-left">
+            <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-green-800 mb-3 sm:mb-4">
+              {{ service.title }}
+            </h2>
+            <p class="text-sm sm:text-base lg:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+              {{ service.description }}
+            </p>
 
-    <!-- Club Fitting Section -->
-    <div class="container mx-auto px-6 lg:px-16">
-        <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden">
-            <a [href]="clubFittingImage" class="w-full md:w-1/2 block">
-                <img [src]="clubFittingImage" alt="Club Fitting" class="w-full h-64 object-cover" />
+            <!-- Features List -->
+            <ul class="space-y-2 mb-4 sm:mb-6">
+              <li
+                *ngFor="let feature of service.features"
+                class="flex items-center justify-center md:justify-start text-sm sm:text-base text-gray-700"
+              >
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                {{ feature }}
+              </li>
+            </ul>
+
+            <a
+              href="mailto:info@bwgolf.com"
+              class="inline-block bg-green-800 hover:bg-green-700 text-white font-medium px-5 sm:px-6 py-2 sm:py-2.5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg text-sm sm:text-base"
+              [attr.aria-label]="'Inquire about ' + service.title"
+            >
+              Inquire Now
             </a>
-            <div class="p-8 md:w-1/2 text-center md:text-left">
-                <h1 class="text-4xl font-bold text-green-800 mb-4">Club Fitting</h1>
-                <p class="text-lg text-gray-600 leading-relaxed">
-                    Get the perfect fit for your clubs with our professional club fitting services. Ensure your equipment is tailored to your swing for optimal performance.
-                </p>
-            </div>
+          </div>
         </div>
+      </article>
     </div>
-</div>
+  </div>
+</section>
+
+<!-- Pricing CTA -->
+<section class="bg-green-700 py-8 sm:py-12 lg:py-16" aria-label="Contact for pricing">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4">
+      Ready to Get Started?
+    </h2>
+    <p class="text-sm sm:text-base lg:text-lg text-green-100 mb-4 sm:mb-6 max-w-2xl mx-auto">
+      Contact us today to learn more about our services and pricing options.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+      <a
+        routerLink="/team"
+        class="inline-block bg-white text-green-800 font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full hover:bg-green-50 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base"
+        aria-label="Meet our instructors"
+      >
+        Meet Our Team
+      </a>
+      <a
+        href="tel:+14801234567"
+        class="inline-block bg-transparent border-2 border-white text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full hover:bg-white hover:text-green-800 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
+        aria-label="Call us"
+      >
+        Call Us Now
+      </a>
+    </div>
+  </div>
+</section>

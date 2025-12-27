@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { RouterModule } from '@angular/router';
+import { RouterOutlet, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +9,14 @@ import { RouterModule } from '@angular/router';
 })
 export class AppComponent {
   title = 'BW Golf';
+  isMobileMenuOpen = false;
+  currentYear = new Date().getFullYear();
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  closeMobileMenu(): void {
+    this.isMobileMenuOpen = false;
+  }
 }

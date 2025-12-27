@@ -2,16 +2,46 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <title>Creating An Angular Web Project</title>
-    <base href="/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8" />
+  <title>BW Golf - Premier Golf Training & Lessons</title>
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="BW Golf offers premier golf training, lessons, and world-class facilities. Elevate your game with our expert instructors." />
+  <meta name="theme-color" content="#166534" />
+  <meta name="author" content="BW Golf" />
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="BW Golf - Premier Golf Training & Lessons" />
+  <meta property="og:description" content="Experience the finest golf training and lessons designed for players of all skill levels." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Google Fonts - Inter for modern typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN for development (will be replaced by build process in production) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
 </head>
 
-<body>
-    <app-root></app-root>
+<body class="font-sans antialiased">
+  <app-root></app-root>
 </body>
 
 </html>

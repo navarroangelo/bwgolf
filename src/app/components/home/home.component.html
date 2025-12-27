@@ -1,68 +1,116 @@
-<div class="bg-gray-100 py-16">
-    <!-- Hero Section -->
-    <div class="container mx-auto px-6 lg:px-16 text-center mb-16 relative">
-        <img [src]="hero.image" alt="{{ hero.alt }}" class="rounded-lg shadow-lg w-full h-full object-cover" style="filter: brightness(50%)" />
-        <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
-            <div class="text-white w-2/3">
-                <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">
-                    {{ hero.title }}
-                </h1>
-                <p class="text-lg lg:text-xl leading-relaxed">
-                    {{ hero.description }}
-                </p>
-            </div>
-        </div>
+<!-- Hero Section -->
+<section class="relative min-h-[50vh] sm:min-h-[60vh] lg:min-h-[70vh] flex items-center justify-center overflow-hidden" aria-label="Hero section">
+  <img
+    [src]="hero.image"
+    [alt]="hero.alt"
+    class="absolute inset-0 w-full h-full object-cover brightness-50"
+    loading="eager"
+  />
+  <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white mb-4 sm:mb-6 leading-tight">
+        {{ hero.title }}
+      </h1>
+      <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
+        {{ hero.description }}
+      </p>
+      <button
+        (click)="navigateTo('/services')"
+        class="mt-6 sm:mt-8 bg-green-600 hover:bg-green-500 text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm sm:text-base"
+        aria-label="Get started with BW Golf"
+      >
+        Get Started
+      </button>
     </div>
+  </div>
+</section>
 
-    <!-- Join Our Golf Club Section -->
-    <div class="container mx-auto px-6 lg:px-16 mb-16">
-        <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden">
-            <img [src]="joinClub.image" alt="{{ joinClub.alt }}" class="w-full md:w-1/2 h-auto" />
-            <div class="p-8 md:w-1/2 text-center md:text-left">
-                <h4 class="text-3xl font-bold text-green-800 mb-4">
-                    {{ joinClub.title }}
-                </h4>
-                <p class="text-lg text-gray-600 mb-6">
-                    {{ joinClub.description }}
-                </p>
-                <button (click)="joinClub.buttonAction()" class="bg-green-800 text-white px-6 py-2 rounded-full hover:bg-green-700 transition duration-300">
+<!-- Main Content -->
+<div class="bg-gray-50 py-8 sm:py-12 lg:py-16">
+  <!-- Join Our Golf Club Section -->
+  <section class="container mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12 lg:mb-16" aria-labelledby="join-title">
+    <article class="flex flex-col md:flex-row items-center bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+      <div class="w-full md:w-1/2 h-48 sm:h-64 md:h-80 lg:h-96 overflow-hidden">
+        <img
+          [src]="joinClub.image"
+          [alt]="joinClub.alt"
+          class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+        />
+      </div>
+      <div class="p-6 sm:p-8 lg:p-12 md:w-1/2 text-center md:text-left">
+        <h2 id="join-title" class="text-xl sm:text-2xl lg:text-3xl font-bold text-green-800 mb-3 sm:mb-4">
+          {{ joinClub.title }}
+        </h2>
+        <p class="text-sm sm:text-base lg:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+          {{ joinClub.description }}
+        </p>
+        <button
+          (click)="navigateTo('/services')"
+          class="bg-green-800 hover:bg-green-700 text-white font-medium px-5 sm:px-6 py-2 sm:py-2.5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg text-sm sm:text-base"
+          aria-label="Join BW Golf now"
+        >
           {{ joinClub.buttonText }}
         </button>
-            </div>
-        </div>
-    </div>
+      </div>
+    </article>
+  </section>
 
-    <!-- Our Team Section -->
-    <div class="container mx-auto px-6 lg:px-16 mb-16">
-        <div class="flex flex-col md:flex-row-reverse items-center bg-white rounded-lg shadow-lg overflow-hidden">
-            <img [src]="team.image" alt="{{ team.alt }}" class="w-full md:w-1/2 h-auto" />
-            <div class="p-8 md:w-1/2 text-center md:text-left">
-                <h4 class="text-3xl font-bold text-green-800 mb-4">{{ team.title }}</h4>
-                <p class="text-lg text-gray-600 mb-6">
-                    {{ team.description }}
-                </p>
-                <button (click)="team.buttonAction()" class="bg-green-800 text-white px-6 py-2 rounded-full hover:bg-green-700 transition duration-300">
+  <!-- Our Team Section -->
+  <section class="container mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12 lg:mb-16" aria-labelledby="team-title">
+    <article class="flex flex-col md:flex-row-reverse items-center bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+      <div class="w-full md:w-1/2 h-48 sm:h-64 md:h-80 lg:h-96 overflow-hidden">
+        <img
+          [src]="team.image"
+          [alt]="team.alt"
+          class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+        />
+      </div>
+      <div class="p-6 sm:p-8 lg:p-12 md:w-1/2 text-center md:text-left">
+        <h2 id="team-title" class="text-xl sm:text-2xl lg:text-3xl font-bold text-green-800 mb-3 sm:mb-4">
+          {{ team.title }}
+        </h2>
+        <p class="text-sm sm:text-base lg:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+          {{ team.description }}
+        </p>
+        <button
+          (click)="navigateTo('/team')"
+          class="bg-green-800 hover:bg-green-700 text-white font-medium px-5 sm:px-6 py-2 sm:py-2.5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg text-sm sm:text-base"
+          aria-label="Meet our team"
+        >
           {{ team.buttonText }}
         </button>
-            </div>
-        </div>
-    </div>
+      </div>
+    </article>
+  </section>
 
-    <!-- Know More About Us Section -->
-    <div class="container mx-auto px-6 lg:px-16">
-        <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden">
-            <img [src]="about.image" alt="{{ about.alt }}" class="w-full md:w-1/2 h-auto" />
-            <div class="p-8 md:w-1/2 text-center md:text-left">
-                <h4 class="text-3xl font-bold text-green-800 mb-4">
-                    {{ about.title }}
-                </h4>
-                <p class="text-lg text-gray-600 mb-6">
-                    {{ about.description }}
-                </p>
-                <button (click)="about.buttonAction()" class="bg-green-800 text-white px-6 py-2 rounded-full hover:bg-green-700 transition duration-300">
+  <!-- Know More About Us Section -->
+  <section class="container mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="about-title">
+    <article class="flex flex-col md:flex-row items-center bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+      <div class="w-full md:w-1/2 h-48 sm:h-64 md:h-80 lg:h-96 overflow-hidden">
+        <img
+          [src]="about.image"
+          [alt]="about.alt"
+          class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+        />
+      </div>
+      <div class="p-6 sm:p-8 lg:p-12 md:w-1/2 text-center md:text-left">
+        <h2 id="about-title" class="text-xl sm:text-2xl lg:text-3xl font-bold text-green-800 mb-3 sm:mb-4">
+          {{ about.title }}
+        </h2>
+        <p class="text-sm sm:text-base lg:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+          {{ about.description }}
+        </p>
+        <button
+          (click)="navigateTo('/about')"
+          class="bg-green-800 hover:bg-green-700 text-white font-medium px-5 sm:px-6 py-2 sm:py-2.5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg text-sm sm:text-base"
+          aria-label="Learn more about BW Golf"
+        >
           {{ about.buttonText }}
         </button>
-            </div>
-        </div>
-    </div>
+      </div>
+    </article>
+  </section>
 </div>

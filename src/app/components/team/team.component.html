@@ -1,59 +1,72 @@
-<div class="bg-gray-100 py-16">
-    <!-- Meet Our Team Section -->
-    <div class="container mx-auto px-6 lg:px-16 mb-16">
-        <h1 class="text-4xl lg:text-5xl font-extrabold text-green-800 text-center mb-12">
-            {{ meetOurTeamTitle }}
-        </h1>
+<!-- Hero Banner -->
+<section class="bg-green-800 py-12 sm:py-16 lg:py-20" aria-label="Team page header">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-3 sm:mb-4">
+      {{ pageTitle }}
+    </h1>
+    <p class="text-sm sm:text-base md:text-lg text-green-100 max-w-2xl mx-auto">
+      {{ pageSubtitle }}
+    </p>
+  </div>
+</section>
 
-        <!-- Ian Matchado -->
-        <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden mb-12">
-            <img [src]="ianMatchadoImage" alt="{{ ianMatchadoAlt }}" class="w-1/2 h-auto object-cover" />
+<!-- Team Members Section -->
+<section class="bg-gray-50 py-8 sm:py-12 lg:py-16" aria-label="Team members">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="space-y-8 sm:space-y-12 lg:space-y-16">
+      <!-- Team Member Card -->
+      <article
+        *ngFor="let member of teamMembers; let i = index; let even = even"
+        class="group bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+      >
+        <div
+          class="flex flex-col items-center"
+          [class.md:flex-row]="even"
+          [class.md:flex-row-reverse]="!even"
+        >
+          <!-- Image Container -->
+          <div class="w-full md:w-1/2 h-56 sm:h-72 md:h-80 lg:h-96 overflow-hidden">
+            <img
+              [src]="member.image"
+              [alt]="member.alt"
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
 
-            <div class="p-8 md:w-1/2 text-center md:text-left">
-                <h2 class="text-2xl font-bold text-green-800 mb-4">
-                    {{ ianMatchadoName }}
-                </h2>
-                <p class="text-lg text-gray-600 mb-4">
-                    {{ ianMatchadoDescription }}
-                </p>
-                <p class="text-lg text-gray-600">
-                    {{ ianMatchadoPosition }}
-                </p>
-            </div>
+          <!-- Content Container -->
+          <div class="w-full md:w-1/2 p-6 sm:p-8 lg:p-10 xl:p-12 text-center md:text-left">
+            <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-green-800 mb-2 sm:mb-3">
+              {{ member.name }}
+            </h2>
+            <p class="text-sm sm:text-base lg:text-lg text-gray-600 mb-3 sm:mb-4 leading-relaxed">
+              {{ member.description }}
+            </p>
+            <span class="inline-block bg-green-100 text-green-800 text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 sm:py-2 rounded-full">
+              {{ member.position }}
+            </span>
+          </div>
         </div>
-
-        <!-- Jojo Campos -->
-        <div class="flex flex-col md:flex-row-reverse items-center bg-white rounded-lg shadow-lg overflow-hidden mb-12">
-            <img [src]="jojoCamposImage" alt="{{ jojoCamposAlt }}" class="w-1/2 h-auto object-cover" />
-
-            <div class="p-8 md:w-1/2 text-center md:text-left">
-                <h2 class="text-2xl font-bold text-green-800 mb-4">
-                    {{ jojoCamposName }}
-                </h2>
-                <p class="text-lg text-gray-600 mb-4">
-                    {{ jojoCamposDescription }}
-                </p>
-                <p class="text-lg text-gray-600">
-                    {{ jojoCamposPosition }}
-                </p>
-            </div>
-        </div>
-
-        <!-- Noli Kempis -->
-        <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden">
-            <img [src]="noliKempisImage" alt="{{ noliKempisAlt }}" class="w-1/2 h-auto object-cover" />
-
-            <div class="p-8 md:w-1/2 text-center md:text-left">
-                <h2 class="text-2xl font-bold text-green-800 mb-4">
-                    {{ noliKempisName }}
-                </h2>
-                <p class="text-lg text-gray-600 mb-4">
-                    {{ noliKempisDescription }}
-                </p>
-                <p class="text-lg text-gray-600">
-                    {{ noliKempisPosition }}
-                </p>
-            </div>
-        </div>
+      </article>
     </div>
-</div>
+  </div>
+</section>
+
+<!-- Join the Team CTA -->
+<section class="bg-green-700 py-8 sm:py-12 lg:py-16" aria-label="Join our team call to action">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4">
+      Want to Learn From Our Experts?
+    </h2>
+    <p class="text-sm sm:text-base lg:text-lg text-green-100 mb-4 sm:mb-6 max-w-2xl mx-auto">
+      Book a session with our professional instructors and start improving your game today.
+    </p>
+    <a
+      href="mailto:info@bwgolf.com"
+      class="inline-block bg-white text-green-800 font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full hover:bg-green-50 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base"
+      aria-label="Contact us to book a session"
+    >
+      Contact Us
+    </a>
+  </div>
+</section>

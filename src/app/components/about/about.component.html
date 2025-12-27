@@ -1,31 +1,64 @@
-<div class="bg-gray-100 py-16">
-    <!-- About Section -->
-    <div class="container mx-auto px-6 lg:px-16 mb-16">
-        <h1 class="text-4xl lg:text-5xl font-extrabold text-green-800 text-center mb-12">
-            {{ aboutSectionTitle }}
-        </h1>
-        <p class="text-lg lg:text-xl text-gray-700 leading-relaxed text-center mb-8">
-            {{ aboutSectionContent }}
-        </p>
-    </div>
+<!-- Hero Banner -->
+<section class="bg-green-800 py-12 sm:py-16 lg:py-20" aria-label="About page header">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 sm:mb-6">
+      {{ aboutSectionTitle }}
+    </h1>
+    <p class="text-sm sm:text-base md:text-lg lg:text-xl text-green-100 leading-relaxed max-w-4xl mx-auto">
+      {{ aboutSectionContent }}
+    </p>
+  </div>
+</section>
 
-    <!-- Training Features Section -->
-    <div class="container mx-auto px-6 lg:px-16 mb-16">
-        <h1 class="text-4xl lg:text-5xl font-extrabold text-green-800 text-center mb-12">
-            {{ trainingFeaturesTitle }}
-        </h1>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div *ngFor="let feature of trainingFeatures" class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img [src]="feature.image" alt="{{ feature.alt }}" class="w-full h-48 object-cover" />
-                <div class="p-6">
-                    <h4 class="text-2xl font-bold text-green-800 mb-4">
-                        {{ feature.title }}
-                    </h4>
-                    <p class="text-gray-600">
-                        {{ feature.content }}
-                    </p>
-                </div>
-            </div>
+<!-- Training Features Section -->
+<section class="bg-gray-50 py-8 sm:py-12 lg:py-16" aria-labelledby="features-title">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 id="features-title" class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-green-800 text-center mb-8 sm:mb-10 lg:mb-12">
+      {{ trainingFeaturesTitle }}
+    </h2>
+
+    <!-- Features Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+      <article
+        *ngFor="let feature of trainingFeatures; let i = index"
+        class="group bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:-translate-y-1"
+      >
+        <div class="h-40 sm:h-48 lg:h-52 overflow-hidden">
+          <img
+            [src]="feature.image"
+            [alt]="feature.alt"
+            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+          />
         </div>
+        <div class="p-4 sm:p-5 lg:p-6">
+          <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-green-800 mb-2 sm:mb-3">
+            {{ feature.title }}
+          </h3>
+          <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+            {{ feature.content }}
+          </p>
+        </div>
+      </article>
     </div>
-</div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="bg-green-700 py-8 sm:py-12 lg:py-16" aria-label="Call to action">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4">
+      Ready to Start Your Golf Journey?
+    </h2>
+    <p class="text-sm sm:text-base lg:text-lg text-green-100 mb-4 sm:mb-6 max-w-2xl mx-auto">
+      Join our community of passionate golfers and take your game to the next level.
+    </p>
+    <a
+      routerLink="/services"
+      class="inline-block bg-white text-green-800 font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full hover:bg-green-50 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base"
+      aria-label="View our services"
+    >
+      View Our Services
+    </a>
+  </div>
+</section>

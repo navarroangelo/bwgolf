@@ -27,10 +27,11 @@
                     },
                     "configurations": {
                         "production": {
-                            "budgets": [{
+                            "budgets": [
+                                {
                                     "type": "anyComponentStyle",
-                                    "maximumWarning": "12kB",
-                                    "maximumError": "15kB"
+                                    "maximumWarning": "50kB",
+                                    "maximumError": "100kB"
                                 },
                                 {
                                     "type": "initial",
